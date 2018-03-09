@@ -6,7 +6,7 @@ Overview
 ---
 
 
-In this project we are going to use Unscented Kalman Filter for tracking objects around self driving car. Laser and Radar data will be used as input to extended Kalman Filter. 
+In this project we are going to use PID controller for steering a car in a simulation environment. 
 
 
 Pipeline
@@ -18,22 +18,26 @@ Pipeline
 
 <br>
 
-I. At first sensor data will be read and Unscented Kalman Filter will be initialized by the first data point. Depending on the sensor type, we use the appropriate update step.
+I. The main code has already been provided. I just tweeked with the hyper-parameters in order to get the best result. The main hyper-paramter that I worked with include proportional(Kp), integral(Ki), and differential coefficients(Kd).
 
 
-* In order to avoid division by zero, I make sure that the data points are not smaller than a threshold value (0.0001). Also in order to avoid recomputing some of the values, they are precomputed and later on used whenever need be.
+II. In order for the vehicle to stay on track, it should always stay aligned on the center of the error. As a result, cross talk
+error (cte) is the main factor that helps us to keep the vehicle on the center of the road.
 
-II. After initializing kalman filter class, object location(Px, Py) and velocity(Vx, Vy) will be predicted.
+III. Proportional, integral, and differential coefficients get multiplied by some other factors that depend on the cte.
 
-III. Once the location is predicted, sensor data will be used to update the location of the object. Based on the sensor type (Laser, Radar), there are two different types of update step. 
-
-* During update step for Radar, we also make sure that the updated φ is in a certain range [-π, π]. 
-
-
-* After each update step, updated values will be pushed into an estimate array in order to calculate the root mean square error(rmse) between the predicted values and actual ground truth values. As can be seen in the following gif video, the errors for (Px, Py, Vx, Vy) are [0.0768, 0.0800, 0.3202, 0.2674] at the end of the simulation.
+IV. Proportional coeffient gets multiplied by cte, integral coefficient gets multiplied by the summation of all cross talk errors so far,and finally differential coefficient gets multiplied by the difference between current cte and previous cte. For more detail please refer to the PID.cpp code.
 
 
-IV. Here also I brought the NIS plot for radar and lidar as well as 7.8 line. As it can be seen in the following plot, both of them perform fairly well. But radar is performing better because it's spike are going over the 7.8 line more regularly. There could be some improvements to the lidar parameters.
+V. Once step IV is done, steering value gets updated so that the vehicle keeps itself on the center of the road.
+
+VI. My intitial guess for Kp, Ki, Kd was based on the course materials itself. I played with them until I got to the most stable situation. My final best values include.
+Kp = 0.25, Ki = 0.0005, Kd = 4 </br>
+Kp = 0.125, Ki = 0.0005 , Kd = 3 </br>
+Kp = 0.112, Ki = 0.005, Kd = 2 </br>
+
+
+VII. Final video of the result is provided below. Please click on the following image to view the full video on YouTube. 
 
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Nupljp59Mds/0.jpg)](https://www.youtube.com/watch?v=Nupljp59Mds)

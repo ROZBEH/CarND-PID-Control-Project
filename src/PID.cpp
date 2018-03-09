@@ -14,7 +14,6 @@ void PID::Init(double in1, double in2, double in3) {
 	Kp = in1;
 	Ki = in2;
 	Kd = in3;
-	counter = 0;
 	p[0] = Kp;
 	p[1] = Ki;
 	p[2] = Kd;
