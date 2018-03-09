@@ -21,12 +21,12 @@ Pipeline
 I. The main code has already been provided. I just tweeked with the hyper-parameters in order to get the best result. The main hyper-paramter that I worked with include proportional(Kp), integral(Ki), and differential coefficients(Kd).
 
 
-II. In order for the vehicle to stay on track, it should always stay aligned on the center. As a result, cross talk
+II. In order for the vehicle to stay on track, it should always stay aligned on the center. As a result, cross track
 error (cte) is the main factor that helps us to keep the vehicle on the center of the road.
 
 III. Proportional, integral, and differential coefficients get multiplied by some other factors that depend on the cte.
 
-IV. Proportional coeffient gets multiplied by cte, integral coefficient gets multiplied by the summation of all cross talk errors so far,and finally differential coefficient gets multiplied by the difference between current cte and previous cte. For more detail please refer to the PID.cpp code.
+IV. Proportional coeffient gets multiplied by cte, integral coefficient gets multiplied by the summation of all cross track errors so far,and finally differential coefficient gets multiplied by the difference between current cte and previous cte. For more detail please refer to the PID.cpp code.
 
 
 V. Once step IV is done, steering value gets updated so that the vehicle steers in such a way that keeps itself on the center of the road.
