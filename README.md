@@ -6,7 +6,7 @@ Overview
 ---
 
 
-In this project we are going to use PID controller for steering a car in a simulation environment. 
+In this project we are going to use PID controller to automatically steer a car in a simulation environment. 
 
 
 Pipeline
