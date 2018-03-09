@@ -12,6 +12,7 @@ public:
   double d_error = 0.0;
   double i_sum = 0.0;
   double prev_cte = 0.0;
+  double p [3] = {0.0,0.0,0.0};
 
   /*
   * Coefficients
