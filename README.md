@@ -28,6 +28,8 @@ Self-Driving Car Engineer Nanodegree Program
 
 There's an experimental patch for windows in this [PR](https://github.com/udacity/CarND-PID-Control-Project/pull/3)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Nupljp59Mds" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Basic Build Instructions
 
 1. Clone this repo.
