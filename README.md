@@ -31,14 +31,16 @@ IV. Proportional coeffient gets multiplied by cte, integral coefficient gets mul
 
 V. Once step IV is done, steering value gets updated so that the vehicle steers in such a way that keeps itself on the center of the road.
 
-VI. My intitial guess for Kp, Ki, Kd was based on the course materials itself. I played with them until I got the most stable situation. Final best values include.</br>
+VI. Also, in order to avoid high steer values, steer values between -1 and +1.
+
+VII. My intitial guess for Kp, Ki, Kd was based on the course materials itself. I played with them until I got the most stable situation. Final best values include.</br>
 </br>
 Kp = 0.25, Ki = 0.0005, Kd = 4 </br>
 Kp = 0.125, Ki = 0.0005 , Kd = 3 </br>
 Kp = 0.112, Ki = 0.005, Kd = 2 </br>
 
 
-VII. Final video of the result is provided below. Please click on the following image to view the full video on YouTube. 
+VIII. Final video of the result is provided below. Please click on the following image to view the full video on YouTube. 
 </br>
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Nupljp59Mds/0.jpg)](https://www.youtube.com/watch?v=Nupljp59Mds)
