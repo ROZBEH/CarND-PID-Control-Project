@@ -39,8 +39,10 @@ Kp = 0.25, Ki = 0.0005, Kd = 4 </br>
 Kp = 0.125, Ki = 0.0005 , Kd = 3 </br>
 Kp = 0.112, Ki = 0.005, Kd = 2 </br>
 
+VIII. Kp, Ki, Kd coefficients has their specific effects on keeping the vehicle on track. Our steering is proportional to the distance that we have from center of the track or cross track error (cte), as a result having Kp helps us to compensate for this and steer proportional to our distance from center of the road. On the other hand if we just have the Kp coefficient, the car would steer too harshly to the changes and it will oscilate back and forth. Having Kd helps to avoid this by gradually steering the vehicle. Kd is the differential coefficient which gets multiplied by the difference between te current cte and previous cte.
 
-VIII. Final video of the result is provided below. Please click on the following image to view the full video on YouTube. 
+
+IX. Final video of the result is provided below. Please click on the following image to view the full video on YouTube. 
 </br>
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Nupljp59Mds/0.jpg)](https://www.youtube.com/watch?v=Nupljp59Mds)

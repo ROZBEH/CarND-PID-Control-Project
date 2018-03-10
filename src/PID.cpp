@@ -31,7 +31,7 @@ void PID::UpdateError(double cte) {
 }
 
 double PID::TotalError() {
-	return prev_cte*prev_cte ;
+	return p_error + i_error + d_error  ;
 
 }
 
